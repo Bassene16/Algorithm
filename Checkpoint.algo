@@ -1,0 +1,36 @@
+ALGORITHM Checkpoint
+VAR
+    mot: CHAR;
+    nb: INTEGER;
+BEGIN
+    write "Entrer un mot : "
+    read (mot)
+    nb= len(mot)
+    write ("ce mot compte", nb, " lettres ")
+END
+ALGORITHM Checkpoint
+VAR
+    phrase: STRING
+    nb, i: INTEGER
+BEGIN
+    write "Entrer une phrase : "
+    read (phrase)
+    nb = 0;
+    IF Mid(phrase, i, 1) = " " THEN
+        nb = nb + 1
+    END_IF
+    write "Cette phrase compte ", nb + 1, " mots"
+END
+ALGORITHM Checkpoint
+VAR
+    phrase: STRING
+    nb, i: INTEGER
+BEGIN
+    write "Entrer une phrase : "
+    read (phrase)
+    nb = 0;
+    IF (Mid(phrase, i, 1) = "a" ou Mid(phrase, i, 1) = "e" ou Mid(phrase, i, 1) = "i" ou Mid(phrase, i, 1) = "o" ou Mid(phrase, i, 1) = "u" ou Mid(phrase, i, 1) = "y") THEN
+        nb = nb + 1
+    END_IF
+    write "Cette phrase compte" , nb, "voyelles"
+END
