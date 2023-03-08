@@ -1,36 +1,46 @@
-ALGORITHM Checkpoint
+/*algorithm qui permet de compter les caractères d'une phrase*/
+algorithm comptage
+FUNCTION cptcar(phrase:STRING) : INTEGER;
 VAR
-    mot: CHAR;
-    nb: INTEGER;
+    cpt,i : INTEGER := 0;
+    c: CHAR
 BEGIN
-    write "Entrer un mot : "
-    read (mot)
-    nb= len(mot)
-    write ("ce mot compte", nb, " lettres ")
+    For i from 0 to length(phrase)-1 STEP 1 DO 
+        WHILE (c!=" ") DO
+            cpt=cpt+1
+        END_WHILE
+    END_FOR
+    RETURN cpt ;
 END
-ALGORITHM Checkpoint
+
+/*algorithm qui compte le nombre de mots d'une phrase*/
+algorithm cptmot
+FUNCTION cptnbrmot(phrase:STRING) :INTEGER;
 VAR
-    phrase: STRING
-    nb, i: INTEGER
-BEGIN
-    write "Entrer une phrase : "
-    read (phrase)
-    nb = 0;
-    IF Mid(phrase, i, 1) = " " THEN
-        nb = nb + 1
-    END_IF
-    write "Cette phrase compte ", nb + 1, " mots"
-END
-ALGORITHM Checkpoint
+    nbrmot,i : INTEGER :=0;
+    BEGIN
+        For i from 0 to length(phrase)-1 STEP 1 DO
+            IF (phrase[i]==" " or phrase[i]==".") THEN
+                nbrmot=nbrmot+1
+            END_IF
+        END_FOR
+        RETURN nbrmot;
+    END
+
+/*algorithm qui compte le nombre de voyelles d'une phrase*/
+algorithm cptvoyelles
+FUNCTION cptnbrvoyelles(phrase:STRING) :=0;
 VAR
-    phrase: STRING
-    nb, i: INTEGER
-BEGIN
-    write "Entrer une phrase : "
-    read (phrase)
-    nb = 0;
-    IF (Mid(phrase, i, 1) = "a" ou Mid(phrase, i, 1) = "e" ou Mid(phrase, i, 1) = "i" ou Mid(phrase, i, 1) = "o" ou Mid(phrase, i, 1) = "u" ou Mid(phrase, i, 1) = "y") THEN
-        nb = nb + 1
-    END_IF
-    write "Cette phrase compte" , nb, "voyelles"
-END
+    nbrvoyelles,i : INTEGER :=0 ;
+    BEGIN
+        For i from 0 to lenght(phrase)-1 STEP 1 DO
+            IF (phrase[i]="a")
+               (phrase[i]="i")
+               (phrase[i]="o")
+               (phrase[i]="e")
+               (phrase[i]="u")
+               (phrase[i]="y") THEN
+            nbrvoyelles=nbrvoyelles+1;
+            END_IF
+        END_FOR
+    END
